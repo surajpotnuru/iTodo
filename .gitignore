@@ -28,7 +28,12 @@ plugins/android.json
 plugins/ios.json
 www/
 $RECYCLE.BIN/
-
+debug.keystore
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+bower_components/
+.editorconfig
+my-release-key.keystore
+package-lock.json
+.gitignore

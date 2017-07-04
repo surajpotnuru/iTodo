@@ -1,14 +1,43 @@
-<ion-header>
-  <ion-navbar>
+<ion-header primary>
+  <ion-navbar primary color="primary">
     <ion-title>
-      Ionic Blank
+      <h3>iTodo</h3>
+      <ion-icon name="more" (click)="presentPopover($event)" id="more-button">
+      </ion-icon>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  
+ <ion-fab right bottom>
+    <button ion-fab color="danger"><ion-icon name="arrow-up"></ion-icon></button>
+    <ion-fab-list side="top">
+
+      <button ion-fab color="white" (click)="deleteAllNotes()"><i style="color: crimson;font-size: 1.4em;" class="fa fa-trash"></i></button>
+      <button ion-fab color="primary" (click)="addNote()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+
+  <ion-card *ngFor="let note of allNotes;let i = index;" [attr.data-index]="i">
+    <ion-card-content>
+      <ion-card-title>
+        {{note.title}}
+      </ion-card-title>
+      <div [innerHTML]="note.text">
+      </div>
+      <hr/>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6><button ion-button clear color="primary" small (click)="editNote(note,i)"><i class="fa fa-pencil"></i>&nbsp;&nbsp;EDIT</button></ion-col>
+        
+          <ion-col col-6><button ion-button clear color="danger" small (click)="deleteNote(note.key,i)"><i class="fa fa-trash"></i>&nbsp;&nbsp;DELETE</button></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+
+  </ion-card>
+
+
 </ion-content>

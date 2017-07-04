@@ -1,0 +1,24 @@
+<!--
+  Generated template for the AddNotePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header primary>
+
+  <ion-navbar primary color="primary">
+
+    <ion-title *ngIf="mode=='add'">Add a Note <i class="fa fa-save" style="color: white; float: right;font-size: 1.4em; " (click)="saveNote('add')"></i></ion-title>
+    <ion-title *ngIf="mode=='edit'">Edit Note <i class="fa fa-save" style="color: white; float: right;font-size: 1.4em; " (click)="saveNote('edit')"></i></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <h3 style="color: grey;font-style: italic;" padding>{{note.title}}&nbsp;&nbsp;<i class="fa fa-pencil" (click)="editNoteTitle()" style="font-size: 15px;vertical-align: super;"></i></h3>
+    <rich-text [formControlItem]="item"></rich-text>
+    <hr/>
+    <div padding [innerHTML]="item.value" id="preview"></div>
+
+</ion-content>

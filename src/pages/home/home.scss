@@ -1,3 +1,33 @@
 page-home {
-
+    #more-button{
+        float: right;
+        margin-right: 5px;
+    }
+    h3{
+        position: absolute;
+        margin: 0px !important;
+    }
+    ion-fab{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+    ion-card,ion-card-content{
+        padding-bottom: 0px !important;
+    }
+    ion-grid{
+        padding: 0px !important;
+        text-align: center;
+    }
+    hr{
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+    ion-card-title{
+        font-style: italic;
+        color: grey !important;
+    }
+    ion-col button{
+        width: 100%;
+    }
 }
